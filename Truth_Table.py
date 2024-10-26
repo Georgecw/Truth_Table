@@ -21,7 +21,6 @@ def make_table(trues, dim):
         bi_arr.append(0)
         bi_np = np.array(bi_arr)
         data[i] = bi_np
-    print(data)
 
     table = pd.DataFrame(data=data, columns=variables, dtype=int)
 
@@ -30,7 +29,8 @@ def make_table(trues, dim):
     return table
 
 
+dim = int(input("请输入真值表的输入变量数: "))
 trues = input("请输入值为 1 的最小项, 用逗号分隔: ").split(",")
 trues = [int(num) for num in trues]
-table = make_table(trues, 4)
+table = make_table(trues, dim)
 table.to_csv("Truth_Table.csv", index=False)

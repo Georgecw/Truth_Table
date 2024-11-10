@@ -6,8 +6,12 @@ def make_table(trues: list, dim: int, out_num: int):
     variables = []
     for i in range(0, dim):
         variables.append("A" + str(dim - i - 1))
-    for j in range(0, out_num):
-        variables.append("Y" + str(out_num - j - 1))
+
+    if out_num == 1:
+        variables.append("Y")
+    else:
+        for j in range(0, out_num):
+            variables.append("Y" + str(out_num - j - 1))
 
     data = np.zeros((2**dim, dim + out_num))
     for i in range(0, 2**dim):

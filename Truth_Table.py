@@ -38,7 +38,9 @@ out_num = int(input("请输入真值表的输出变量数: "))
 trues = []
 for i in range(1, out_num + 1):
     true_temp = input(
-        "请输入第 " + str(i) + " 个输出变量中值为 1 的最小项, 用逗号分隔: "
+        "请输入第 "
+        + str(i)
+        + " 个(顺序从右到左)输出变量中值为 1 的最小项, 用逗号分隔: "
     ).split(",")
 
     for i in range(len(true_temp)):

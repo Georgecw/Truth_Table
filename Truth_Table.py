@@ -50,5 +50,6 @@ for i in range(1, out_num + 1):
     true_temp = []
 
 # 制表并导出
+trues = list(reversed(trues))
 table = make_table(trues, dim, out_num)
 table.to_csv("Truth_Table.csv", index=False)
